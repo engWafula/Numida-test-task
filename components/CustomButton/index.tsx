@@ -1,17 +1,21 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
-type CustomButtonProps = {
+interface ButtonProps {
   title: string;
-};
-
-export default function CustomButton({ title }: CustomButtonProps) {
-  return (
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>{title}</Text>
-      <FontAwesome name="arrow-right" size={10} color="#30C2E3" />
-    </TouchableOpacity>
-  );
+  onPress: () => void;
+  loading?:boolean
+}
+export default function Button( {title,onPress,loading}:ButtonProps){
+    return (
+        <TouchableOpacity
+        style={styles.submitButton}
+        onPress={onPress}
+      >
+        <Text style={styles.submitButtonText}>
+          {loading ? "Loading.." : title}
+        </Text>
+      </TouchableOpacity>
+    )
 }

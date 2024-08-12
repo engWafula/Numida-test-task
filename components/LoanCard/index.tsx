@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import CustomButton from "../CustomButton";
 import { styles } from "./styles";
+import CustomLinkButton from "../CustomLinkButton";
 
 interface LoanCardProps {
 	title: string;
@@ -27,7 +27,7 @@ const LoanCard: React.FC<LoanCardProps> = ({
 						<Text style={styles.cardInterest}>
 							Interest: {interestRate}
 						</Text>
-						<CustomButton
+						<CustomLinkButton
 							title="Learn More"
 						/>
 					</View>

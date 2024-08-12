@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 
@@ -7,8 +8,8 @@ export const styles = StyleSheet.create({
 		borderRadius: 8,
 		marginBottom: 16,
 		borderWidth: 1,
-		borderColor: "#D3D3D3",
-		backgroundColor: "#FFF",
+		borderColor: Colors.borderColor,
+		backgroundColor: Colors.primary,
 		overflow: "hidden",
 	},
 	content: {
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
 		marginBottom: 8,
 	},
 	cardAmount: {
-		color: "#30C2E3",
+		color: Colors.buttonColor,
 		fontSize: 20,
 		fontWeight: "bold",
 	},

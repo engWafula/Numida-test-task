@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 
@@ -23,24 +24,25 @@ export  const styles = StyleSheet.create({
     },
     form: {
       justifyContent: "center",
+      marginBottom:30
     },
     inputContainer: {
       marginBottom: 16,
     },
     label: {
       fontSize: 14,
-      color: "#000",
+      color: Colors.secondary,
       marginBottom: 8,
     },
     input: {
       borderWidth: 1,
-      borderColor: "#d3d3d3",
+      borderColor:Colors.borderColor,
       borderRadius: 8,
       padding: 12,
       fontSize: 16,
     },
     submitButton: {
-      backgroundColor: "#00BCD4",
+      backgroundColor: Colors.background,
       borderRadius: 8,
       paddingVertical: 16,
       marginTop: 24,
@@ -50,12 +52,6 @@ export  const styles = StyleSheet.create({
       textAlign: "center",
       fontSize: 16,
       fontWeight: "bold",
-    },
-    errorText: {
-      color: "red",
-      fontSize: 12,
-      marginTop: -12,
-      marginBottom: 16,
-    },
+    }
   });
   

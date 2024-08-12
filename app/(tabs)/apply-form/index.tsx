@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import {
   View,
   Text,
-  TouchableOpacity,
   SafeAreaView,
   Alert,
 } from "react-native";
@@ -12,6 +11,7 @@ import CustomTextInput from "@/components/CustomTextInput";
 import { useMutation } from "@/hooks/useMutation";
 import { useRouter } from "expo-router";
 import { styles } from "./styles";
+import CustomButton from "@/components/CustomButton";
 
 interface FormProps {
   full_name: string;
@@ -133,16 +133,12 @@ export default function ApplyForm() {
             error={formik.errors.loan_purpose}
             touched={formik.touched.loan_purpose}
           />
-
-          <TouchableOpacity
-            style={styles.submitButton}
-            onPress={() => formik.handleSubmit()}
-          >
-            <Text style={styles.submitButtonText}>
-              {loading ? "Loading.." : "SUBMIT"}
-            </Text>
-          </TouchableOpacity>
         </View>
+        <CustomButton
+            onPress={() => formik.handleSubmit()}
+            loading={loading}
+            title= "SUBMIT"
+            />
       </View>
     </SafeAreaView>
   );

@@ -1,51 +1,40 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text, View, FlatList } from "react-native";
+import { SafeAreaView, Text, View, FlatList } from "react-native";
 import LoanCard from "@/components/LoanCard";
-import { Link } from "expo-router";
-import { useQuery, gql } from '@apollo/client';
+import { useRouter } from "expo-router";
+import { useQuery} from '@apollo/client';
 import { styles } from "./styles";
+import { GET_LOAN_PRODUCT_DATA } from "@/utils/graphql/queries/loanProducts";
+import { loanData, loanProductsData } from "@/types";
+import CustomButton from "@/components/CustomButton";
+import { Colors } from "@/constants/Colors";
+import Loader from "@/components/Loader";
+import CustomError from "@/components/CustomError";
 
-const GET_DATA = gql`
-  query loanProducts {
-    loanProducts {
-      id,
-      name,
-      interestRate,
-      maximumAmount
-    }
-  }
-`;
 
-interface loanData {
-	id:number;
-	name:string;
-	interestRate:number;
-	maximumAmount:number;
-}
+
 
 export default function HomeScreen() {
-  const { loading, error, data } = useQuery(GET_DATA);
+  const { loading, error, data,refetch } = useQuery<loanProductsData>(GET_LOAN_PRODUCT_DATA);
+  const router = useRouter()
 
 
-
-  if (loading) {
-    return (
-      <View style={styles.text}>
-        <Text>Loading...</Text>
-      </View>
-    );
+  const handleRefetch = async()=>{
+    try {
+      await refetch()
+    } catch (error) {
+    }
   }
 
-  if (error) {
-    return (
-      <View style={styles.text}>
-        <Text>Error: {error.message}</Text>
-      </View>
-    );
-  }
+
+  if (loading) return <Loader/>
+  
+
+  if (error) return <CustomError message={error.message} onRetry={handleRefetch}/>
+    
 
     // Find the maximum interest rate
-	const maxInterestRate = Math.max(...data.loanProducts.map((loan:loanData)=> loan.interestRate));
+	const maxInterestRate = Math.max(...data!.loanProducts.map((loan:loanData)=> loan.interestRate));
 
 
   return (
@@ -54,14 +43,14 @@ export default function HomeScreen() {
         <Text style={styles.title}>Loan Application Dashboard</Text>
         
         <FlatList
-          data={data.loanProducts}
-          keyExtractor={(item) => item.id}
+          data={data!.loanProducts}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <LoanCard
               title={item.name}
               maxAmount={`UGX ${item.maximumAmount.toLocaleString()}`}
               interestRate={`${item.interestRate}%`}
-              backgroundColor={item.interestRate === maxInterestRate ? "#D4FAF5" : "#FFF"}
+              backgroundColor={item.interestRate === maxInterestRate ? Colors.activeCard : Colors.primary}
             />
           )}
           contentContainerStyle={styles.flatListContent}
@@ -69,9 +58,11 @@ export default function HomeScreen() {
 
       </View>
       
-      <Link href="/(tabs)/apply-form" style={styles.link}>
-        Apply for a Loan
-      </Link>
+      <CustomButton
+       title="APPLY FOR A LOAN"
+       loading={false}
+       onPress={() => router.push("/(tabs)/apply-form")}
+      />
     </SafeAreaView>
   );
 }

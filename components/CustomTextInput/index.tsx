@@ -1,6 +1,7 @@
 import React from "react";
 import { KeyboardTypeOptions, Text, TextInput, View } from "react-native";
 import { styles } from "./styles";
+import { Colors } from "@/constants/Colors";
 
 interface CustomTextInputProps {
   label: string;
@@ -28,7 +29,7 @@ const CustomTextInput = ({
         <TextInput
           style={styles.input}
           placeholder={placeholder}
-          placeholderTextColor="#A9A9A9"
+          placeholderTextColor={Colors.textPlaceholder}
           onChangeText={onChangeText}
           value={value}
           keyboardType={keyboardType}

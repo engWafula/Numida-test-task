@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 
@@ -18,16 +19,6 @@ export const styles = StyleSheet.create({
     },
     flatListContent: {
       paddingBottom: 20,
-    },
-    link: {
-      color: "#fff",
-      textAlign: "center",
-      marginVertical: 16,
-      backgroundColor: "#30C2E3",
-      padding: 10,
-      borderRadius: 8,
-      fontSize: 18,
-      fontFamily: "Poppins-Medium",
     },
     text: {
         flex: 1,
