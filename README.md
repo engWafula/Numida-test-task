@@ -39,7 +39,7 @@ In the output, you'll find options to open the app in a
     
   ```bash
       export const baseURL = "http://10.10.2.112:5000"
-    ```    
+  ```    
 
     
              
