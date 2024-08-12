@@ -42,11 +42,8 @@ In the output, you'll find options to open the app in a
   ```
 ## Screenshots
 
-![Alt Text](assets/images/screenhots/Screenshot_20240812_145233_Expo Go.jpg)
-
-
-
-    
-             
-
-
+![Screenshot_20240812_145233_Expo Go](https://github.com/user-attachments/assets/cdc8a196-872e-4010-a87c-732546c6a873)
+![Screenshot_20240812_145240_Expo Go](https://github.com/user-attachments/assets/ee941776-f51f-4596-bddf-f6d39db76e28)
+![Screenshot_20240812_145245_Expo Go](https://github.com/user-attachments/assets/7081ff62-ffa4-4142-9060-0db974abdd33)
+![Screenshot_20240812_145318_Expo Go](https://github.com/user-attachments/assets/9cc480d1-96c2-4ccc-b8f8-e7d948baf36c)
+![Screenshot_20240812_145329_Expo Go](https://github.com/user-attachments/assets/d074b52c-6c37-4163-b3ff-d97934107b4f)
