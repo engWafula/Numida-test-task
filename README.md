@@ -25,10 +25,7 @@ In the output, you'll find options to open the app in a
 
 ## Update the API baseURL
  Ensure you replace the IP address of the API baseURL found in the apiBaseUrl.ts file found in the constants folder with your IP address.
-      ```bash
-export const baseURL = "http://10.10.2.112:5000"
-     ```                
- 
+               
  You can find your IP address using the following command in your terminal.
 
  1. Linux
@@ -39,6 +36,12 @@ export const baseURL = "http://10.10.2.112:5000"
     ```bash
        ipconfig
      ```
+    
+  ```bash
+      export const baseURL = "http://10.10.2.112:5000"
+    ```    
+
+    
              
 
 
