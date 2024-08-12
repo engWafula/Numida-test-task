@@ -37,9 +37,9 @@ In the output, you'll find options to open the app in a
        ipconfig
      ```
     
-  ```bash
+    ```bash
       export const baseURL = "http://10.10.2.112:5000"
-  ```
+    ```
 ## Screenshots
 
 ![Screenshot_20240812_145233_Expo Go](https://github.com/user-attachments/assets/cdc8a196-872e-4010-a87c-732546c6a873)
