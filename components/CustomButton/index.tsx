@@ -4,22 +4,14 @@ import { FontAwesome } from "@expo/vector-icons";
 import { styles } from "./styles";
 
 type CustomButtonProps = {
-	title: string;
+  title: string;
 };
 
 export default function CustomButton({ title }: CustomButtonProps) {
-	return (
-		<TouchableOpacity
-			style={styles.button}
-		>
-			<Text style={styles.buttonText}>{title}</Text>
-			<FontAwesome
-				name="arrow-right"
-				size={10}
-				color="#30C2E3"
-			/>
-		</TouchableOpacity>
-	);
+  return (
+    <TouchableOpacity style={styles.button}>
+      <Text style={styles.buttonText}>{title}</Text>
+      <FontAwesome name="arrow-right" size={10} color="#30C2E3" />
+    </TouchableOpacity>
+  );
 }
-
-
